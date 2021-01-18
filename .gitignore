@@ -12,3 +12,6 @@ classes/*
 /target
 .nrepl-port
 .lein-repl-history
+.clj-kondo/
+.lsp/
+.calva/
