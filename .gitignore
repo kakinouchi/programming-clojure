@@ -14,3 +14,4 @@ classes/*
 .lein-repl-history
 .clj-kondo/
 .lsp/
+.calva/
