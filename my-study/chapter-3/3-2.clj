@@ -138,6 +138,9 @@
 ; cf:  Clojure 101 / logical true or false
 ; https://dev.to/icncsx/clojure-101-logical-true-or-false-2e1m
 ; clojure logical true でググった
+; あ、公式ドキュメントにもはっきりそう書いてあった：
+; https://clojure.org/reference/special_forms#if
+; ”that is, nil and false constitute logical falsity, and everything else constitutes logical truth”
 
 (if true "Hello!" "Goodbye.") ; "Hello!"
 (if 1 "Hello!" "Goodbye.") ; "Hello!"
