@@ -141,6 +141,8 @@
 ; あ、公式ドキュメントにもはっきりそう書いてあった：
 ; https://clojure.org/reference/special_forms#if
 ; ”that is, nil and false constitute logical falsity, and everything else constitutes logical truth”
+; (stackoverflow で ドキュメント参照してくれてた
+; https://stackoverflow.com/questions/31420029/logical-truthness-in-clojure)
 
 (if true "Hello!" "Goodbye.") ; "Hello!"
 (if 1 "Hello!" "Goodbye.") ; "Hello!"
