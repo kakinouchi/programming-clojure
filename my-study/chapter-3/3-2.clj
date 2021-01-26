@@ -123,5 +123,34 @@
 
 
 ; 3. シーケンスに対する述語
-; こっから！！！
+
+; every
+(every? odd? [1 3 4])
+
+; some
+(some even? [1 2 3])
+; some は pred が返した値をそのまま返すことに注意。
+(some identity [nil false 1 nil 2]) ; => 1
+
+; 補足。
+; some のドキュメントが言ってる "logical true" というのは、
+; たぶん、nil でも false でもない値のことっぽい。
+; cf:  Clojure 101 / logical true or false
+; https://dev.to/icncsx/clojure-101-logical-true-or-false-2e1m
+; clojure logical true でググった
+
+(if true "Hello!" "Goodbye.") ; "Hello!"
+(if 1 "Hello!" "Goodbye.") ; "Hello!"
+
+
+; not-every, not-any
+(every? even? (whole-numbers)) ; false すべて偶数か？ 「偶数という pred がすべての要素にたいして真」か？
+(not-every? even? (whole-numbers)) ; true 「偶数という pred がすべての要素にたいして偽」か？
+(some even? (whole-numbers)) ; true 偶数が存在するか？ 「偶数という pred を真にする要素がある」か？
+(not-any? even? (whole-numbers)) ; false 偶数が存在しないか？ 「偶数という pred を真にする要素が一つもない」か？
+
+
+
+
 ; 4. シーケンスを変換する関数
+; こっから！
