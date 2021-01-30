@@ -158,4 +158,44 @@
 
 
 ; 4. シーケンスを変換する関数
-; こっから！
+
+; map
+(map #(format "<p>%s</p>" %) ["the" "quick" "brown" "fox"])
+; おーすげー、これは JS や Scala より便利なところや！コレクションを複数取れる！（その代わり、関数の引数を増やすの忘れずに！）
+(map #(format "<%s>%s</%s>" %1 %2 %1) ["h1" "h2" "h3" "h1"] ["the" "quick" "brown" "fox"])
+
+
+; reduce
+(reduce + (range 1 11))
+(reduce * (range 1 11))
+
+; sort
+(sort [42 1 7 11])
+(sort > [42 1 7 11])
+
+; sort-by
+(sort-by #(.toString %) [42 1 7 11])
+; (1 11 42 7) 文字として比較された
+(sort-by #(.toString %) (compare "a" "b") [42 1 7 11])
+(> 1 2)
+(compare "a" "b")
+
+
+; リスト内包表記（Clojure ではもちろん、シーケンス内包表記 となる）
+
+
+(defn sum
+  "Sum two numbers together"
+  [number1 number2]
+  (+ number1 number2))
+
+(map (partial sum 2) [1 3 5 7 9])
+
+(dec 1)
+
+(conj [3 4] 3)
+
+(defn foo
+  [x]
+  (when (> x 0)
+    (conj (foo (dec x)) x)))
